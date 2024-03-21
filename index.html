@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .crossed {
+        color: red;
+        text-decoration: line-through;
+      }
+    </style>
   </head>
   <body>
     <h1>Todo List</h1>
@@ -32,6 +38,14 @@
         listContainer.appendChild(li);
         input_box.value = null;
       }
+
+      listContainer.addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+          e.target.classList.toggle("crossed");
+        } else if (e.target.tagName === "span") {
+          e.target.parentElement.remove();
+        }
+      });
     </script>
   </body>
 </html>
