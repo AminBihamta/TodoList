@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <input
+      id="input_Box"
+      type="text"
+      name="task_title"
+      placeholder="Task Name"
+    />
+    <button onclick="addTask()" id="add_button">Add Task</button>
+    <div>
+      <ul id="listContainer">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+      </ul>
+    </div>
+
+    <script>
+      const input_box = document.getElementById("input_Box");
+      const listContainer = document.getElementById("listContainer");
+
+      function addTask() {
+        let li = document.createElement("li");
+        li.innerHTML = input_box.value;
+        listContainer.appendChild(li);
+        input_box.value = null;
+      }
+    </script>
+  </body>
+</html>
